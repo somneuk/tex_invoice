@@ -1,0 +1,45 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Gradient definitions -->
+  <defs>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#06b6d4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background circle with gradient -->
+  <circle cx="100" cy="100" r="95" fill="url(#logoGradient)" opacity="0.15"/>
+  
+  <!-- Border circle -->
+  <circle cx="100" cy="100" r="95" fill="none" stroke="url(#logoGradient)" stroke-width="2" opacity="0.4"/>
+  
+  <!-- Main icon container - rounded square -->
+  <rect x="40" y="40" width="120" height="120" rx="20" fill="url(#logoGradient)" filter="url(#glow)"/>
+  
+  <!-- Inner white shape - TX initials styled as document/receipt -->
+  <g fill="#ffffff">
+    <!-- Left vertical line (T) -->
+    <rect x="55" y="65" width="8" height="65" rx="4"/>
+    
+    <!-- Top horizontal line (T) -->
+    <rect x="45" y="65" width="38" height="8" rx="4"/>
+    
+    <!-- Right vertical line (X) - top right to bottom left -->
+    <line x1="75" y1="80" x2="110" y2="130" stroke="#ffffff" stroke-width="8" stroke-linecap="round"/>
+    
+    <!-- Right vertical line (X) - top left to bottom right -->
+    <line x1="110" y1="80" x2="75" y2="130" stroke="#ffffff" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Accent dots for invoice theme -->
+  <circle cx="130" cy="75" r="4" fill="#06b6d4" opacity="0.8"/>
+  <circle cx="130" cy="95" r="4" fill="#10b981" opacity="0.8"/>
+  <circle cx="130" cy="115" r="4" fill="#8b5cf6" opacity="0.8"/>
+</svg>

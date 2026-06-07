@@ -17,6 +17,7 @@ import {
   formatCurrency,
   formatDate
 } from './utils';
+import logoSvg from './assets/logo.svg';
 import './App.css';
 
 function App() {
@@ -533,7 +534,7 @@ function App() {
       <div className="login-container">
         <div className="glass-panel login-card">
           <div className="login-logo">
-            <div className="logo-icon">TX</div>
+            <img src={logoSvg} alt="TexInvoice Logo" className="login-logo-image" />
             <div className="logo-text">TexInvoice</div>
           </div>
 
