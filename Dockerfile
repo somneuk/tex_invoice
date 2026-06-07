@@ -12,9 +12,6 @@ FROM node:20-alpine AS app
 LABEL maintainer="tex-invoice"
 LABEL description="TEX Invoice - Billing Web Application"
 
-# Install dumb-init to handle signals properly
-RUN apk add --no-cache dumb-init
-
 # Create non-root user
 RUN addgroup -g 1001 -S nodejs && \
     adduser -S nodejs -u 1001
@@ -47,6 +44,4 @@ EXPOSE 5000
 HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
     CMD node -e "require('http').get('http://localhost:5000/api/auth/me', {headers: {'Authorization': 'Bearer health'}}, (r) => {if (r.statusCode !== 401 && r.statusCode !== 200) throw new Error(r.statusCode)})" || exit 1
 
-# Use dumb-init to handle signals
-ENTRYPOINT ["/usr/sbin/dumb-init", "--"]
 CMD ["node", "server.js"]
