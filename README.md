@@ -2,6 +2,14 @@
 
 A full-stack invoicing application built with React (frontend) and Node.js/Express (backend) using SQLite for data storage.
 
+## 📚 Documentation
+
+- **[README.md](README.md)** ← Start here (this file)
+- **[DOCKER_SETUP.md](DOCKER_SETUP.md)** - Post-Docker setup & troubleshooting
+- **[DOCFILE.md](DOCFILE.md)** - Advanced Linux deployment with nginx & systemd
+- **[.gitignore](.gitignore)** - Git configuration
+- **[Dockerfile](Dockerfile)** - Docker image definition
+
 ## Quick Start
 
 ### Prerequisites
@@ -121,6 +129,14 @@ Then run:
 ```bash
 docker-compose up -d
 ```
+
+**After Docker starts, see [DOCKER_SETUP.md](DOCKER_SETUP.md) for:**
+- Verifying the container is healthy
+- Default login credentials
+- Backing up data
+- Troubleshooting common issues
+- Performance monitoring
+- Production setup tips
 
 ### Option 2: Local Development
 
@@ -290,6 +306,9 @@ docker run -it tex_invoice:latest
 - Check volume permissions
 - Ensure file size is under 10MB
 
+**For more Docker troubleshooting:**
+- See [DOCKER_SETUP.md](DOCKER_SETUP.md) - Detailed troubleshooting guide with 15+ common issues and solutions
+
 ## API Endpoints
 
 All endpoints require authentication (JWT token) except login/register:
@@ -330,4 +349,8 @@ Private project
 
 ## Support
 
-For issues or questions, check the logs or DOCFILE.md for detailed deployment instructions.
+For issues or questions:
+
+- **Docker issues:** See [DOCKER_SETUP.md](DOCKER_SETUP.md) - Troubleshooting section with container health checks, permission issues, port conflicts, and more
+- **Advanced deployment:** Check [DOCFILE.md](DOCFILE.md) for Linux server setup with nginx, systemd, and SSL
+- **General help:** Check application logs with `docker logs tex_invoice_app`
